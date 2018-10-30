@@ -1,0 +1,75 @@
+.out{
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+.in-box{
+    height: 80px;
+    line-height: 80px;
+    width: 800px;
+    border: 1px solid #e4e4e4;
+    padding: 0 10px;
+    border-radius: 8px;
+    margin: 20px 0  20px 0;
+    
+}
+.total-in-action{
+    padding-left: 20px;
+    border: 1px solid #e4e4e4;
+    width: 900px;
+    padding-top: 20px;
+
+}
+.radiu-icon,.total-radiu-icon{
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;   
+    border: 1px solid #f5f5f5;
+    background-color: #ccc; 
+    display: inline-block;
+    cursor: pointer;
+}
+.radiu-icon.active,.total-radiu-icon.active{
+    background-color: #f40; 
+}
+.radiu-icon,.goods-text,.goods-number,.total-price,.one-price{
+    display: inline-block;
+    margin-right: 20px;
+}
+.number-less,.number-add{
+    display: inline-block;
+    width: 28px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    cursor: pointer;
+    background-color: #ccc;
+}
+.number-less:hover,.number-add:hover{
+    font-size: 14px;
+    background-color: #bbb;
+}
+.number-input{
+    display: inline-block;
+}
+.goods-number{
+    border: 1px solid #e4e4e4;
+    height: 40px;
+    margin-top: 10px;
+    line-height: 40px;
+    padding: 0 30px;
+    border-radius: 10px;
+}
+.total-price span{
+    color: #f40;
+}
+.one-price:after{
+    content: ","
+}
+
+.one-price span:before,.total-price span:before{
+    content: "￥"
+}
+.last-total-price{
+    font-size: 24px;
+    color: #f40;
+}

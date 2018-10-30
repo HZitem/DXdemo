@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="out">
+        <ul>
+            <li class="li-top" data-index="1">1</li>
+            <li class="li-top" data-index="2">2</li>
+            <li class="li-top" data-index="3">3</li>
+            <li class="li-top" data-index="4">4</li>
+        </ul>
+        <ul>
+            <div class="li-middle-left">
+                <li class="li-middle" data-index="12">12</li>
+                <li class="li-middle" data-index="11">11</li>
+            </div>
+            <li class="li-middle-big">
+                <i class="iconfont pointer">&#xe614;</i>           
+            </li>
+            <div class="li-middle-right">
+                <li class="li-middle" data-index="5">5</li>
+                <li class="li-middle" data-index="6">6</li>
+            </div>
+        </ul>
+        <ul>
+            <li class="li-bottom" data-index="10">10</li>
+            <li class="li-bottom" data-index="9">9</li>
+            <li class="li-bottom" data-index="8">8</li>
+            <li class="li-bottom" data-index="7">7</li>
+        </ul>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+        $('.li-middle-big').on('click', function () {
+            var i = 0;
+            var setTnter = setInterval(function () {
+                $('li').removeClass('active');
+                $("li[data-index=" + i + "]").addClass('active');
+                if (i == 12) {
+                    i = 0
+                }
+                i++;
+            }, 80)
+            setTimeout(function () {
+                clearTimeout(setTnter);
+            }, 2000)
+        })
+    </script>
+</body>
+
+</html>

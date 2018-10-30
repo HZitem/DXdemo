@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .shopcar{
+        width: 1200px;
+        height: auto;
+        border: 1px solid #999;
+    }
+    .checkall{
+        margin: 10px 0 10px 20px;
+    }
+
+    .shop-lists{
+        width: 100%;
+        height: 80px;
+        border: 1px solid #999;
+    }
+    .shop-lists li{
+        margin-top: 20px;
+        float: left;
+        list-style-type: none;
+        text-align: center;
+    }
+    .list-input{
+        width: 100px;
+        margin: 10px 0 10px 20px;
+    }
+    .list-text{
+        width: 250px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .list-text a{
+        text-decoration: none;
+        color: #000;
+    }
+    .list-info{
+        width: 200px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .list-price{
+        width: 200px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .list-num{
+        width: 200px;
+    }
+    .num-less,.num-add{
+        float: left;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-color: rgb(218, 222, 224);
+        cursor: pointer;
+    }
+    .num-input{
+        float: left;
+        display: inline-block;
+    } 
+    .num-input input{
+        width: 100px;
+        height: 21.5px;
+        text-align: center;
+    }
+    .list_total{
+        width: 200px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .list_total span{
+        color: rgb(247, 41, 41);
+    }
+    </style>
+</head>
+<body>
+    <div class="shopcar">
+        <div class="out">
+            <!-- 全选 -->
+            <input type="checkbox" class="checkall">全选
+            <div class="shop">
+                <ul class="shop-lists">
+                    <li class="list-input">
+                        <input type="checkbox">
+                    </li>
+                    <li class="list-text">
+                        <a href="#">夏季男士迷彩无袖T恤圆领潮流韩版修身男装背心青年时尚打底衫男</a>
+                    </li>
+                    <li class="list-info">
+                        <p>尺寸：16*16*3(cm)</p>
+                        <p>规格：默认</p>
+                    </li>
+                    <li class="list-price">
+                        单价：<span>2.00</span>
+                    </li>
+                    <li class="list-num">
+                        <div class="num-less">-</div>
+                        <div class="num-input"><input type="text" value="5"></div>
+                        <div class="num-add">+</div>
+                    </li>
+                    <li class="list-total">
+                        商品总价:<span>10.00</span>
+                    </li>
+                </ul>
+                <ul class="shop-lists">
+                    <li class="list-input">
+                        <input type="checkbox">
+                    </li>
+                    <li class="list-text">
+                        <a href="#">夏季男士迷彩无袖T恤圆领潮流韩版修身男装背心青年时尚打底衫男</a>
+                    </li>
+                    <li class="list-info">
+                        <p>尺寸：16*16*3(cm)</p>
+                        <p>规格：默认</p>
+                    </li>
+                    <li class="list-price">
+                        单价：<span>4.00</span>
+                    </li>
+                    <li class="list-num">
+                        <div class="num-less">-</div>
+                        <div class="num-input"><input type="text" value="5"></div>
+                        <div class="num-add">+</div>
+                    </li>
+                    <li class="list-total">
+                        商品总价:<span>20.00</span>
+                    </li>
+                </ul>
+                <ul class="shop-lists">
+                    <li class="list-input">
+                        <input type="checkbox">
+                    </li>
+                    <li class="list-text">
+                        <a href="#">夏季男士迷彩无袖T恤圆领潮流韩版修身男装背心青年时尚打底衫男</a>
+                    </li>
+                    <li class="list-info">
+                        <p>尺寸：16*16*3(cm)</p>
+                        <p>规格：默认</p>
+                    </li>
+                    <li class="list-price">
+                        单价：<span>6.00</span>
+                    </li>
+                    <li class="list-num">
+                        <div class="num-less">-</div>
+                        <div class="num-input"><input type="text" value="4"></div>
+                        <div class="num-add">+</div>
+                    </li>
+                    <li class="list-total">
+                        商品总价:<span>24.00</span>
+                    </li>
+                </ul>
+                <ul class="shop-lists">
+                    <li class="list-input">
+                        <input type="checkbox">
+                    </li>
+                    <li class="list-text">
+                        <a href="#">夏季男士迷彩无袖T恤圆领潮流韩版修身男装背心青年时尚打底衫男</a>
+                    </li>
+                    <li class="list-info">
+                        <p>尺寸：16*16*3(cm)</p>
+                        <p>规格：默认</p>
+                    </li>
+                    <li class="list-price">
+                        单价：<span>8.00</span>
+                    </li>
+                    <li class="list-num">
+                        <div class="num-less">-</div>
+                        <div class="num-input"><input type="text" value="2"></div>
+                        <div class="num-add">+</div>
+                    </li>
+                    <li class="list-total">
+                        商品总价:<span>16.00</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p>选中商品的总价：<span class="last-total-price">00.00</span></p>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        //单行价格
+        function Single (data,num){         //data（触发的事件对象） num（事件传过来的val()值）
+            var shop = data.parents('.shop-lists');     //当前事件的父级（class="shop-lists"）;
+            var price = shop.find('.list-price span').text();   //获取当前事件的单加
+            var singleline = parseFloat(price) * num;       //计算
+            shop.find('.list-total span').text(singleline.toFixed(2));  //把计算好的，传给当前的class=".list-total"里面的span
+        }
+        //总价
+        function Totalprice (){
+            var Tprice = 0;
+            var checked = $('.list-input').find('input:checked');   //找到class="list-input"里面input选中的
+            for (let i = 0; i < checked.length; i++) {              //循环出选中的个数
+                var money = checked.eq(i).parents('.shop-lists').find('.list-total span').text();   //找到勾选的里面的总价
+                Tprice += parseFloat($.trim(money));        //计算全部总价
+            }
+            $('.last-total-price').text(Tprice.toFixed(2));     //把计算好的，传给当前的class="last-total-price",四舍五入保留小数点两位
+        }
+
+        //less
+        $('.num-less').on('click',function(){
+            var bool = $(this).parent().siblings('.list-input').find('input').is(':checked');   //当前元素是否别勾选
+            var input = $(this).siblings('.num-input').find("input");   //  找到class="num-input"里面的input
+            var val = input.val();      //获取里面的val()
+            if(val>0){      
+                val = parseInt(val);
+                val --;         //val-1
+                input.val(val);     //把更新的数传给class="num-input"里面的input.val()
+            }
+
+            Single($(this),val);    //传值给Single
+            Totalprice(bool);       //传值给Totalprice
+        })
+        //add
+        $('.num-add').on('click',function(){
+            var bool = $(this).parent().siblings('.list-input').find('input').is(':checked');
+            var input = $(this).siblings('.num-input').find("input");
+            var val = input.val();
+            val = parseInt(val);
+            val ++;
+            input.val(val);
+        
+            Single($(this),val);
+            Totalprice(bool);
+        })
+        //单选
+        $('.list-input input').on('click',function(){
+            var bool = $(this).parent().filter('.list-input').find('input').is(':checked');
+            var all = $('.checkall');       //找到全选按钮
+            var check = $(this).find('input:checkbox');     //当前的input
+            if(bool){       //判断当前元素是否别勾选
+                check.removeAttr('checked');    //移除checked
+            }else{
+                check.prop('checked',true);     //添加checked
+                all.removeAttr('checked');      //有一个单选没勾选，全选就不选中
+            }
+
+            Totalprice(bool);
+        })
+        //多选
+        $('.checkall').on('click',function(){
+            var bool = $(this).siblings('.shop').children('.shop-lists').find('.list-input input').is(':checked');
+            var check = $(this).siblings('.shop').find('input:checkbox');
+            if(this.checked == true){
+                check.prop('checked',true);
+            }else{
+                check.removeAttr('checked');
+            }
+            Totalprice(bool);
+        })
+
+        //输入数。失焦事件
+        $('.num-input input').blur(function(){
+            var bool = $(this).parent().siblings('.list-input').find('input').is(':checked');
+            var val = parseInt($(this).val());
+            Single($(this),val);
+            Totalprice(bool); 
+        })
+    })
+    </script>
+</body>
+</html>
