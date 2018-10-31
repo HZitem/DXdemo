@@ -11,6 +11,10 @@
 </head>
 
 <body>
+    <div class="inpur-group">
+        <input type="text" id="num" placeholder="输入你要的数字，1~12">
+        <button id="run">run</button>
+    </div>
     <div class="out">
         <ul>
             <li class="li-top" data-index="1">1</li>
@@ -24,7 +28,7 @@
                 <li class="li-middle" data-index="11">11</li>
             </div>
             <li class="li-middle-big">
-                <i class="iconfont pointer">&#xe614;</i>           
+                <i class="iconfont pointer">&#xe614;</i>
             </li>
             <div class="li-middle-right">
                 <li class="li-middle" data-index="5">5</li>
@@ -40,19 +44,25 @@
     </div>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
-        $('.li-middle-big').on('click', function () {
-            var i = 0;
-            var setTnter = setInterval(function () {
-                $('li').removeClass('active');
-                $("li[data-index=" + i + "]").addClass('active');
-                if (i == 12) {
-                    i = 0
-                }
-                i++;
-            }, 80)
-            setTimeout(function () {
-                clearTimeout(setTnter);
-            }, 2000)
+        $('#run').click(function () {
+            var num = $('#num').val();
+            if (0 < num && num < 13) {
+                $(this).attr('disabled', 'disabled');
+                var i = 0;
+                var stopTime = (parseInt(num) * 100) + 1300;//1300，刚好一圈,第二圈计算赋值
+                var setTnter = setInterval(function () {
+                    $('li').removeClass('active');
+                    $("li[data-index=" + i + "]").addClass('active');
+                    if (i == 12) {
+                        i = 0
+                    }
+                    i++;
+                }, 100)
+                setTimeout(function () {
+                    clearTimeout(setTnter);
+                    $('#run').removeAttr('disabled');
+                }, stopTime); 
+            }
         })
     </script>
 </body>
