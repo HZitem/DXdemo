@@ -6,6 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        button {
+            margin: 0;
+            border: 0;
+            outline: none;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+            text-align: center;
+            margin: 0 2px;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #f40;
+            color: #fff;
+        }
+
+        li {
+            display: none;
+        }
+
+        .prev,
+        .next,
+        .btn-out {
+            display: inline-block
+        }
+    </style>
 </head>
 
 <body>
@@ -27,66 +55,61 @@
         <li>15</li>
         <li>16</li>
     </ul>
+    <span class="prev">prev</span>
     <div class="btn-out">
     </div>
-    <span class="prev">prev</span>
     <span class="next">next</span>
     <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
     <script>
-        var showNum = 5;
-        var ShowArr = [0, 1, 2, 3, 4];
-        var initShow = function () {
-            $('.show li').hide();
-            var List = $('.show li').length;
-            var btnlen = Math.ceil(List / 5);
-            for (let index = 0; index < 5; index++) {
-                $('.show li').eq(ShowArr[index]).show();
+        var PerPageNumber = 5;//每页条数;
+        var TotalList = $('.show li');
+        var btnGroup = $('.btn-out');
+        var btnHtml = "";
+        for (let i = 0; i < TotalList.length; i = i + PerPageNumber) {  //每5个取一组
+            for (let j = i; j < PerPageNumber * (i + 1); j++) {         //循环每组里面的数
+                TotalList.eq(j).attr('data-index', i / PerPageNumber)      //从0开始。
             }
-            var aa = "";
-            for (let index = 0; index < btnlen; index++) {
-                var b = index + 1;
-                aa += "<button class='btn'>" + b + "</button>"
-            }
-            $('.btn-out').html(aa)
-        }();
+        }
+        var pageLength = parseInt(TotalList.last().attr('data-index'));
+        for (let k = 0; k < pageLength + 1; k++) {
+            var num = parseInt(k) + 1;
+            btnHtml += "<button class='small-btn' data-index=" + k + ">" + num + "</button>"
+        }
+        btnGroup.append(btnHtml);
+        var btn = btnGroup.find('button');
+        $('.show li[data-index=' + 0 + ']').show();
+        btn.eq(0).addClass('active');
 
-        $('.next').click(function () {
-            $('.show li').hide();
-            for (let index = 0; index < 5; index++) {
-                $('.show li').eq(5 + ShowArr[index]).show();
+        var pageShow = function (i) { //显示哪一页
+            TotalList.hide();
+            btn.removeClass('active');
+            btn.eq(i).addClass('active')
+            $('.show li[data-index=' + i + ']').show();
+        }
+
+        //点击页数
+        $(document).delegate('.small-btn', 'click', function () {
+            var index = $(this).data('index');
+            pageShow(index)
+        })
+        //上一页
+        $('.prev').on('click', function () {
+            var nowPage = $('.active').data('index');
+            if (nowPage > 0) {
+                nowPage--;
+                pageShow(nowPage)
             }
-            for (let index = 0; index < 5; index++) {
-                ShowArr.push(5 + ShowArr[index]);
+        })
+        //下一页
+        $('.next').on('click', function () {
+            var nowPage = $('.active').data('index');
+            var maxPage = btn.last().data('index'); //最大的页数
+            if (nowPage < maxPage) {
+                nowPage++;
+                pageShow(nowPage)
             }
-            ShowArr.splice(0, 5);
         })
 
-        $('.prev').click(function () {
-            if (ShowArr[0] != 0) {
-                $('.show li').hide();
-                for (let index = 0; index < 5; index++) {
-                    $('.show li').eq(ShowArr[index] - 5).show();
-                }
-                for (let index = 0; index < 5; index++) {
-                    ShowArr.push(ShowArr[index] - 5);
-                }
-                ShowArr.splice(0, 5);
-            }
-        })
-
-        $(document).on('click', '.btn', function () {
-            $('.show li').hide();
-            var $i = $(this).index() + 1;
-            ShowArr = [];
-            $i = $i * 5;
-            for (let index = 0; index < 5; index++) {
-                ShowArr.push($i - index - 1);
-            }
-            for (let index = 0; index < 5; index++) {
-                $('.show li').eq(ShowArr[index]).show();
-            }
-
-        })
     </script>
 </body>
 
