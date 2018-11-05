@@ -13,7 +13,7 @@
         var ObjArr = [{ id: 1, score: 59 }, { id: 2, score: 80 }, { id: 3, score: 70 }, { id: 4, score: 90 }];
 
         //第一题：取大于等于80分数组对象，位置可以随便，格式[{},{}];
-        (function () {
+        (function(){
             var Arr = [];
             ObjArr.forEach((e, i) => {
                 if (e['score'] >= 80) {
@@ -21,11 +21,10 @@
                 }
             })
             console.log(Arr)
-        }())
+        }());
 
         //第二题：添加Key， 低于60分，评分为C, 60-79，评分为B,80以上评分为A,格式:[{id:1,score:59,level:C},{...},{...},{...}]
-        (function () {
-            console.log(ObjArr)
+        (function(){
             var Arr = ObjArr;
             Arr.forEach((e, i) => {
                 if (e['score'] < 60) {
@@ -36,11 +35,11 @@
                     e.level = "A"
                 }
             })
-            // console.log(Arr)
-        }())
+            console.log(Arr)
+        }());
 
         //第三题：按分数排序，从高到低，排完结果：[{id:1, score:59},{id:3, score:70},{id:2, score:80},{id:4, score:90}]
-        (function () {
+        (function(){
             var NewArr = ObjArr;
             var SortScore = [];
             var Result = [];
@@ -58,7 +57,7 @@
                     }
                 }
             }
-            // console.log(Result)
+            console.log(Result)
         }())
 
     </script>
