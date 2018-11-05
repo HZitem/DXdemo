@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var ObjArr = [{ id: 1, score: 59 }, { id: 2, score: 80 }, { id: 3, score: 70 }, { id: 4, score: 90 }];
+
+        //第一题：取大于等于80分数组对象，位置可以随便，格式[{},{}];
+        (function () {
+            var Arr = [];
+            ObjArr.forEach((e, i) => {
+                if (e['score'] >= 80) {
+                    Arr.push(e)
+                }
+            })
+            console.log(Arr)
+        }())
+
+        //第二题：添加Key， 低于60分，评分为C, 60-79，评分为B,80以上评分为A,格式:[{id:1,score:59,level:C},{...},{...},{...}]
+        (function () {
+            console.log(ObjArr)
+            var Arr = ObjArr;
+            Arr.forEach((e, i) => {
+                if (e['score'] < 60) {
+                    e.level = "C"
+                } else if (e['score'] > 60 && e['score'] < 80) {
+                    e.level = "B"
+                } else {
+                    e.level = "A"
+                }
+            })
+            // console.log(Arr)
+        }())
+
+        //第三题：按分数排序，从高到低，排完结果：[{id:1, score:59},{id:3, score:70},{id:2, score:80},{id:4, score:90}]
+        (function () {
+            var NewArr = ObjArr;
+            var SortScore = [];
+            var Result = [];
+            NewArr.forEach((e, i) => {  //先把里面的分数取出来
+                SortScore.push(e.score);
+            })
+            function sortNumber(a, b) { //排序方法,a是要比较的第二个数，b是第一个,a>b，即后面的数大，所以return true，否则return false。
+                return a - b
+            }
+            SortScore.sort(sortNumber); //调用排序
+            for (let j = 0; j < SortScore.length; j++) {  // 先按分数循环
+                for (let i = 0; i < NewArr.length; i++) {   //再循环整个对象进去匹配
+                    if (NewArr[i].score == SortScore[j]) {
+                        Result.push(NewArr[i])
+                    }
+                }
+            }
+            // console.log(Result)
+        }())
+
+    </script>
+</body>
+
+</html>
