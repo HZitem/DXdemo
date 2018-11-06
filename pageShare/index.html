@@ -66,7 +66,7 @@
         var btnGroup = $('.btn-out');
         var btnHtml = "";
         for (let i = 0; i < TotalList.length; i = i + PerPageNumber) {  //每5个取一组
-            for (let j = i; j < PerPageNumber * (i + 1); j++) {         //循环每组里面的数
+            for (let j = i; j < (PerPageNumber + i); j++) {         //循环每组里面的数
                 TotalList.eq(j).attr('data-index', i / PerPageNumber)      //从0开始。
             }
         }
