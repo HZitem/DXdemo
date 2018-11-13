@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="app">
+        <p>{{text}}</p>
+        <ul>
+            <li class="iconfont" v-for="(item,index) in state" :key="index" @mouseover="liMouse(index)" :class="{active:state[index]}">&#xe621;</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return ({
+                    text:"评分功能",
+                    state: [],
+                })
+            },
+            mounted() {
+                for (let i = 0; i < 5; i++) {
+                    this.state.push(false)
+                }
+            },
+            methods: {
+                liMouse(index) {
+                    for (let i = 0; i < index + 1; i++) {
+                        Vue.set(this.state, i, true);
+                    }
+                    for (let i = index + 1; i < 5; i++) {
+                        Vue.set(this.state, i, false);
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
